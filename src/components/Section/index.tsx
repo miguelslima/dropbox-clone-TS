@@ -15,6 +15,10 @@ interface Props {
 }
 
 const Section: React.FC<Props> = ({ title, variant, description }) => {
+  function handleToggle() {
+    if (window.toggleActiveMenu) window.toggleActiveMenu();
+  }
+
   const buttonVariant = Math.round(Math.random());
 
   return (
@@ -26,7 +30,7 @@ const Section: React.FC<Props> = ({ title, variant, description }) => {
             <span>Dropbox</span>
           </h1>
 
-          <button>{buttonVariant === 0 ? "Acessar" : "Interagir"}</button>
+          <button onClick={handleToggle}>{buttonVariant === 0 ? "Acessar" : "Interagir"}</button>
         </Header>
       </HeaderWrapper>
 
